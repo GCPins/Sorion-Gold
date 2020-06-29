@@ -48,7 +48,7 @@ void DrawUtils::drawCoolText(Vector2 pos, std::string* textStr, float textSize)
 {
 	drawText(pos.add(Vector2(-2, -2)), textStr, new Color(0, 0, 0, 1), textSize);
 	drawText(pos.add(Vector2(1, 1)), textStr, new Color(0, 0, 0, 1), textSize);
-	drawText(pos, textStr, new Color(1, 1, 1, 1), textSize);
+	drawText(pos, textStr, new Color(1, 0.87, 0, 1), textSize);
 }
 
 void DrawUtils::drawText(Vector2 pos, std::string* textStr, Color* color, float textSize)

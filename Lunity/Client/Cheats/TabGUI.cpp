@@ -27,8 +27,12 @@ void TabGUI::onPostRender()
 			// x and y are position, z is width and w is height
 			DrawUtils::fillRectangle(Vector4(8, 8, 130, 32 + (cheatsInThisCat.size() * 10)), Color(0, 0, 0, 1), .5);
 			DrawUtils::drawRectangle(Vector4(8, 8, 130, 32 + (cheatsInThisCat.size() * 10)), Color(1, 0.87, 0, 1), .5, 2);
-			std::string lunStr = std::string("Sorion Gold");
-			DrawUtils::drawText(Vector2(12, 11), &lunStr, nullptr, 2.0f);
+			Color* test = new Color(1, 0.87, 0, 1);
+			std::string sorStr = std::string("Sorion Gold");
+			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
+			std::string logoStr = std::string("S");
+			Color* white = new Color(1, 1, 1, 1);
+			DrawUtils::drawCoolText(Vector2(505, 295), &logoStr, 5.5f);
 			for (uint i = 0; i < cheatsInThisCat.size(); i++) {
 				bool selected = highlightedCht == i;
 				Color* color = nullptr;
@@ -46,12 +50,16 @@ void TabGUI::onPostRender()
 		else {
 			DrawUtils::fillRectangle(Vector4(8, 8, 130, 32 + (categories.size() * 10)), Color(0, 0, 0, 1), .5);
 			DrawUtils::drawRectangle(Vector4(8, 8, 130, 32 + (categories.size() * 10)), Color(1, 0.87, 0, 1), .5, 2);
-			std::string lunStr = std::string("Sorion Gold");
-			DrawUtils::drawText(Vector2(12, 11), &lunStr, nullptr, 2.0f);
+			Color* test = new Color(1, 0.87, 0, 1);
+			Color* white = new Color(1, 1, 1, 1);
+			std::string sorStr = std::string("Sorion Gold");
+			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
+			std::string logoStr = std::string("S");
+			DrawUtils::drawCoolText(Vector2(505, 295), &logoStr, 5.5f);
 			for (uint i = 0; i < categories.size(); i++) {
 				bool selected = highlightedCat == i;
 				if (selected) {
-					DrawUtils::drawText(Vector2(12, 30 + (i * 10)), &string(">" + categories[i]), nullptr, 1.0f);
+					DrawUtils::drawText(Vector2(12, 30 + (i * 10)), &string(">" + categories[i]), test, 1.0f);
 				}
 				else {
 					DrawUtils::drawText(Vector2(12, 30 + (i * 10)), &categories[i], nullptr, 1.0f);

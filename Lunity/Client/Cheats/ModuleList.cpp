@@ -8,6 +8,8 @@ ModuleList::ModuleList():Cheat::Cheat("ModuleList", "Visuals")
 	enabled = true;
 }
 
+Color* gold = new Color(1, 0.87, 0, 1);
+
 void ModuleList::onPostRender()
 {
 	if (enabled) {
@@ -24,7 +26,7 @@ void ModuleList::onPostRender()
 			float wid = DrawUtils::getTextWidth(enabledCheats[i]->name, 1);
 			float safeX = res.x - wid;
 			DrawUtils::fillRectangle(Vector4(safeX - 7, i * 10 + 5, safeX + wid - 3, i * 10 + 15), Color(0, 0, 0, 1), 0.2f);
-			DrawUtils::drawText(Vector2(safeX - 5, i * 10 + 5), &enabledCheats[i]->name, nullptr, 1);
+			DrawUtils::drawText(Vector2(safeX - 5, i * 10 + 5), &enabledCheats[i]->name, gold, 1);
 		}
 	}
 }
