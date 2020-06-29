@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{853DC8FA-4B54-487D-AD3C-6175536EBCEF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Lunity</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;LUNITY_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)x64\Debug\Lunity.dll" "$(AppData)\Lunity\Lunity.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;LUNITY_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LUNITY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;LUNITY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)x64\Release\Lunity.dll" "$(AppData)\Lunity\Lunity.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="capstone\arm.h" />
+    <ClInclude Include="capstone\arm64.h" />
+    <ClInclude Include="capstone\capstone.h" />
+    <ClInclude Include="capstone\evm.h" />
+    <ClInclude Include="capstone\m680x.h" />
+    <ClInclude Include="capstone\m68k.h" />
+    <ClInclude Include="capstone\mips.h" />
+    <ClInclude Include="capstone\platform.h" />
+    <ClInclude Include="capstone\ppc.h" />
+    <ClInclude Include="capstone\sparc.h" />
+    <ClInclude Include="capstone\systemz.h" />
+    <ClInclude Include="capstone\tms320c64x.h" />
+    <ClInclude Include="capstone\x86.h" />
+    <ClInclude Include="capstone\xcore.h" />
+    <ClInclude Include="Client\Cheats\AirAcceleration.h" />
+    <ClInclude Include="Client\Cheats\Antivoid.h" />
+    <ClInclude Include="Client\Cheats\CCGodMode.h" />
+    <ClInclude Include="Client\Cheats\AirJump.h" />
+    <ClInclude Include="BigHead.h" />
+    <ClInclude Include="Client\CheatManager.h" />
+    <ClInclude Include="Client\Cheat.h" />
+    <ClInclude Include="Client\Cheats\AutoSprint.h" />
+    <ClInclude Include="Client\Cheats\AutoWalk.h" />
+    <ClInclude Include="Client\Cheats\BunnyHop.h" />
+    <ClInclude Include="Client\Cheats\CCFly.h" />
+    <ClInclude Include="Client\Cheats\ClickGui.h" />
+    <ClInclude Include="Client\Cheats\ClickTP.h" />
+    <ClInclude Include="Client\Cheats\Coords.h" />
+    <ClInclude Include="Client\Cheats\CPULimiter.h" />
+    <ClInclude Include="Client\Cheats\Criticals.h" />
+    <ClInclude Include="Client\Cheats\Fastfall.h" />
+    <ClInclude Include="Client\Cheats\Flight.h" />
+    <ClInclude Include="Client\Cheats\Freecam.h" />
+    <ClInclude Include="Client\Cheats\Gamemode.h" />
+    <ClInclude Include="Client\Cheats\Glide.h" />
+    <ClInclude Include="Client\Cheats\Hitbox.h" />
+    <ClInclude Include="Client\Cheats\HiveGlide.h" />
+    <ClInclude Include="Client\Cheats\Instabreak.h" />
+    <ClInclude Include="Client\Cheats\InventoryMove.h" />
+    <ClInclude Include="Client\Cheats\Jesus.h" />
+    <ClInclude Include="Client\Cheats\Jetpack.h" />
+    <ClInclude Include="Client\Cheats\Killaura.h" />
+    <ClInclude Include="Client\Cheats\LBfly.h" />
+    <ClInclude Include="Client\Cheats\Longjump.h" />
+    <ClInclude Include="Client\Cheats\MineplexBP.h" />
+    <ClInclude Include="Client\Cheats\Misplace.h" />
+    <ClInclude Include="Client\Cheats\ModuleList.h" />
+    <ClInclude Include="Client\Cheats\NoFall.h" />
+    <ClInclude Include="Client\Cheats\NoPacket.h" />
+    <ClInclude Include="Client\Cheats\NoSlowDown.h" />
+    <ClInclude Include="Client\Cheats\NoWater.h" />
+    <ClInclude Include="Client\Cheats\NoWeb.h" />
+    <ClInclude Include="Client\Cheats\Nuker.h" />
+    <ClInclude Include="Client\Cheats\pch.h" />
+    <ClInclude Include="Client\Cheats\Phase.h" />
+    <ClInclude Include="Client\Cheats\Profiler.h" />
+    <ClInclude Include="Client\Cheats\Radar.h" />
+    <ClInclude Include="Client\Cheats\Scaffold.h" />
+    <ClInclude Include="Client\Cheats\Speed.h" />
+    <ClInclude Include="Client\Cheats\Step.h" />
+    <ClInclude Include="Client\Cheats\TestModule.h" />
+    <ClInclude Include="Client\Cheats\Triggerbot.h" />
+    <ClInclude Include="Client\Cheats\Uninject.h" />
+    <ClInclude Include="Client\Cheats\Velocity.h" />
+    <ClInclude Include="Client\Cheats\WarpShift.h" />
+    <ClInclude Include="Client\Hooks\NetworkHook.h" />
+    <ClInclude Include="Client\Hooks\pch.h" />
+    <ClInclude Include="Client\Hooks\TestHook.h" />
+    <ClInclude Include="Client\pch.h" />
+    <ClInclude Include="Client\Hooks\GamemodeHook.h" />
+    <ClInclude Include="Client\Cheats\PacketLogger.h" />
+    <ClInclude Include="Client\Hooks\MouseHook.h" />
+    <ClInclude Include="Client\SliderSetting.h" />
+    <ClInclude Include="Client\ToggleSetting.h" />
+    <ClInclude Include="SDK\DrawUtils.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Client\Hooks\KeyHook.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="polyhook2\ADisassembler.hpp" />
+    <ClInclude Include="polyhook2\CapstoneDisassembler.hpp" />
+    <ClInclude Include="polyhook2\Detour\ADetour.hpp" />
+    <ClInclude Include="polyhook2\Detour\ILCallback.hpp" />
+    <ClInclude Include="polyhook2\Detour\x64Detour.hpp" />
+    <ClInclude Include="polyhook2\Detour\x86Detour.hpp" />
+    <ClInclude Include="polyhook2\Enums.hpp" />
+    <ClInclude Include="polyhook2\ErrorLog.hpp" />
+    <ClInclude Include="polyhook2\Exceptions\AVehHook.hpp" />
+    <ClInclude Include="polyhook2\Exceptions\BreakPointHook.hpp" />
+    <ClInclude Include="polyhook2\Exceptions\HWBreakPointHook.hpp" />
+    <ClInclude Include="polyhook2\IHook.hpp" />
+    <ClInclude Include="polyhook2\Instruction.hpp" />
+    <ClInclude Include="polyhook2\MemProtector.hpp" />
+    <ClInclude Include="polyhook2\Misc.hpp" />
+    <ClInclude Include="polyhook2\PageAllocator.hpp" />
+    <ClInclude Include="polyhook2\PE\EatHook.hpp" />
+    <ClInclude Include="polyhook2\PE\IatHook.hpp" />
+    <ClInclude Include="polyhook2\PE\PEB.hpp" />
+    <ClInclude Include="polyhook2\Tests\TestEffectTracker.hpp" />
+    <ClInclude Include="polyhook2\UID.hpp" />
+    <ClInclude Include="polyhook2\Virtuals\VFuncSwapHook.hpp" />
+    <ClInclude Include="polyhook2\Virtuals\VTableSwapHook.hpp" />
+    <ClInclude Include="polyhook2\ZydisDisassembler.hpp" />
+    <ClInclude Include="Client\Hooks\RenderHook.h" />
+    <ClInclude Include="SDK\EntList.h" />
+    <ClInclude Include="SDK\LunMath.h" />
+    <ClInclude Include="SDK\LunMC.h" />
+    <ClInclude Include="SDK\LunMem.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="SDK\pch.h" />
+    <ClInclude Include="SDK\TextHolder.h" />
+    <ClInclude Include="Client\Cheats\TabGUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client\Cheats\AirAcceleration.cpp" />
+    <ClCompile Include="Client\Cheats\Antivoid.cpp" />
+    <ClCompile Include="Client\Cheats\CCGodMode.cpp" />
+    <ClCompile Include="Client\Cheats\CCFly.cpp" />
+    <ClCompile Include="Client\Cheat.cpp" />
+    <ClCompile Include="Client\CheatManager.cpp" />
+    <ClCompile Include="Client\Cheats\AirJump.cpp" />
+    <ClCompile Include="Client\Cheats\AutoSprint.cpp" />
+    <ClCompile Include="Client\Cheats\AutoWalk.cpp" />
+    <ClCompile Include="Client\Cheats\BunnyHop.cpp" />
+    <ClCompile Include="Client\Cheats\ClickGui.cpp" />
+    <ClCompile Include="Client\Cheats\ClickTP.cpp" />
+    <ClCompile Include="Client\Cheats\Coords.cpp" />
+    <ClCompile Include="Client\Cheats\CPULimiter.cpp" />
+    <ClCompile Include="Client\Cheats\Criticals.cpp" />
+    <ClCompile Include="Client\Cheats\Fastfall.cpp" />
+    <ClCompile Include="Client\Cheats\Flight.cpp" />
+    <ClCompile Include="Client\Cheats\Freecam.cpp" />
+    <ClCompile Include="Client\Cheats\Gamemode.cpp" />
+    <ClCompile Include="Client\Cheats\Glide.cpp" />
+    <ClCompile Include="Client\Cheats\Hitbox.cpp" />
+    <ClCompile Include="Client\Cheats\HiveGlide.cpp" />
+    <ClCompile Include="Client\Cheats\Instabreak.cpp" />
+    <ClCompile Include="Client\Cheats\InventoryMove.cpp" />
+    <ClCompile Include="Client\Cheats\Jesus.cpp" />
+    <ClCompile Include="Client\Cheats\Jetpack.cpp" />
+    <ClCompile Include="Client\Cheats\Killaura.cpp" />
+    <ClCompile Include="Client\Cheats\LBfly.cpp" />
+    <ClCompile Include="Client\Cheats\Longjump.cpp" />
+    <ClCompile Include="Client\Cheats\MineplexBP.cpp" />
+    <ClCompile Include="Client\Cheats\Misplace.cpp" />
+    <ClCompile Include="Client\Cheats\ModuleList.cpp" />
+    <ClCompile Include="Client\Cheats\NoFall.cpp" />
+    <ClCompile Include="Client\Cheats\NoPacket.cpp" />
+    <ClCompile Include="Client\Cheats\NoSlowDown.cpp" />
+    <ClCompile Include="Client\Cheats\NoWater.cpp" />
+    <ClCompile Include="Client\Cheats\NoWeb.cpp" />
+    <ClCompile Include="Client\Cheats\Nuker.cpp" />
+    <ClCompile Include="Client\Cheats\Phase.cpp" />
+    <ClCompile Include="Client\Cheats\Profiler.cpp" />
+    <ClCompile Include="Client\Cheats\Radar.cpp" />
+    <ClCompile Include="Client\Cheats\Scaffold.cpp" />
+    <ClCompile Include="Client\Cheats\Speed.cpp" />
+    <ClCompile Include="Client\Cheats\Step.cpp" />
+    <ClCompile Include="Client\Cheats\TestModule.cpp" />
+    <ClCompile Include="Client\Cheats\Triggerbot.cpp" />
+    <ClCompile Include="Client\Cheats\Uninject.cpp" />
+    <ClCompile Include="Client\Cheats\Velocity.cpp" />
+    <ClCompile Include="Client\Cheats\WarpShift.cpp" />
+    <ClCompile Include="Client\Hooks\NetworkHook.cpp" />
+    <ClCompile Include="Client\Hooks\TestHook.cpp" />
+    <ClCompile Include="Client\SliderSetting.cpp" />
+    <ClCompile Include="Client\ToggleSetting.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Client\Hooks\KeyHook.cpp" />
+    <ClCompile Include="Client\Hooks\RenderHook.cpp" />
+    <ClCompile Include="Client\Hooks\GamemodeHook.cpp" />
+    <ClCompile Include="Client\Cheats\PacketLogger.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Client\Hooks\MouseHook.cpp" />
+    <ClCompile Include="SDK\DrawUtils.cpp" />
+    <ClCompile Include="SDK\LunMem.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Client\Cheats\TabGUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\minhook.1.3.3\build\native\minhook.targets" Condition="Exists('..\packages\minhook.1.3.3\build\native\minhook.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\minhook.1.3.3\build\native\minhook.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\minhook.1.3.3\build\native\minhook.targets'))" />
+  </Target>
+</Project>
