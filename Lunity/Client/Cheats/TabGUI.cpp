@@ -30,7 +30,6 @@ void TabGUI::onPostRender()
 			Color* test = new Color(1, 0.87, 0, 1);
 			std::string sorStr = std::string("Sorion Gold");
 			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
-			std::string logoStr = std::string("S");
 			Color* white = new Color(1, 1, 1, 1);
 			for (uint i = 0; i < cheatsInThisCat.size(); i++) {
 				bool selected = highlightedCht == i;
@@ -53,8 +52,6 @@ void TabGUI::onPostRender()
 			Color* white = new Color(1, 1, 1, 1);
 			std::string sorStr = std::string("Sorion Gold");
 			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
-			std::string logoStr = std::string("S");
-			DrawUtils::drawCoolText(Vector2(505, 295), &logoStr, 5.5f);
 			for (uint i = 0; i < categories.size(); i++) {
 				bool selected = highlightedCat == i;
 				if (selected) {
