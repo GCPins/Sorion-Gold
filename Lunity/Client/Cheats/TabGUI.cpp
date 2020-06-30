@@ -32,7 +32,6 @@ void TabGUI::onPostRender()
 			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
 			std::string logoStr = std::string("S");
 			Color* white = new Color(1, 1, 1, 1);
-			DrawUtils::drawCoolText(Vector2(505, 295), &logoStr, 5.5f);
 			for (uint i = 0; i < cheatsInThisCat.size(); i++) {
 				bool selected = highlightedCht == i;
 				Color* color = nullptr;
