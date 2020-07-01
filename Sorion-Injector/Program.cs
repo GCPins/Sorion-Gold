@@ -71,17 +71,17 @@ namespace Lunity_Injector
             }
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("Sorion Injector (Fork of Lunity)");
-            Console.WriteLine("Verifying Sorion. Please wait...");
+            Console.WriteLine("Sorion Gold Injector (Fork of Lunity)");
+            Console.WriteLine("Verifying Sorion Gold. Please wait...");
             if (!verifyLunity())
             {
                 Console.WriteLine("An error occoured during the verification process.");
-                Console.WriteLine("Visit the Sorion Website for assisstance: https://cutt.ly/sorion-gold");
-                Console.WriteLine("When asking for help, please supply the ENTIRE error above.");
+                Console.WriteLine("Visit the Sorion Website or Discord for assisstance. Discord invite is located on our website: https://cutt.ly/sorion-gold");
+                Console.WriteLine("When requestion help, please describe the error in detail (include everything listed in the injector).");
                 Console.ReadLine();
                 return;
             }
-            Console.WriteLine("Sorion is properly downloaded!");
+            Console.WriteLine("Sorion Gold is properly downloaded!");
             Console.WriteLine("Waiting for Minecraft...");
             awaitGame();
             Console.WriteLine("Minecraft found, injecting!");
@@ -90,7 +90,7 @@ namespace Lunity_Injector
                 Thread.Sleep(6000);
             }
             injectLunity();
-            Console.WriteLine("Sorion Successfully Injected!");
+            Console.WriteLine("Sorion Gold Successfully Injected!");
             if (!debug)
                 Thread.Sleep(1000);
             else
