@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunity-Injector", "Lunity-Injector\Lunity-Injector.csproj", "{F9B3639B-6BF9-4C05-A480-27CA0C998B5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorion-Injector", "Sorion-Injector\Sorion-Injector.csproj", "{F9B3639B-6BF9-4C05-A480-27CA0C998B5E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lunity", "Lunity\Lunity.vcxproj", "{853DC8FA-4B54-487D-AD3C-6175536EBCEF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sorion", "Sorion\Sorion.vcxproj", "{853DC8FA-4B54-487D-AD3C-6175536EBCEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

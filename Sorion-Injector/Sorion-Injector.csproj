@@ -7,7 +7,7 @@
     <ProjectGuid>{F9B3639B-6BF9-4C05-A480-27CA0C998B5E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>SorionInjector</RootNamespace>
-    <AssemblyName>SorionInjector</AssemblyName>
+    <AssemblyName>Sorion-Injector</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

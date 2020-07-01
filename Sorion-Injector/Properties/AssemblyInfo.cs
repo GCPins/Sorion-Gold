@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("SorionInjector")]
-[assembly: AssemblyDescription("Sorion/Sorion Gold Injector")]
+[assembly: AssemblyDescription("Sorion/Sorion Gold Injector, Fork of the Lunity Utility Mod")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jamer Community Developers")]
-[assembly: AssemblyProduct("Lunity-Injector")]
+[assembly: AssemblyProduct("Sorion-Injector")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("Lunity Fork")]
 [assembly: AssemblyCulture("")]
