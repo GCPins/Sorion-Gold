@@ -8,7 +8,7 @@ ModuleList::ModuleList():Cheat::Cheat("ModuleList", "Visuals")
 	enabled = true;
 }
 
-Color* gold = new Color(1, 0.87, 0, 1);
+Color* gold = new Color(0.7, 0.7, 0.7, 1);
 
 void ModuleList::onPostRender()
 {

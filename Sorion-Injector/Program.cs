@@ -21,7 +21,7 @@ namespace Lunity_Injector
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(error);
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
         }
         public static Process game;
         public static IntPtr pHandle;
@@ -69,30 +69,30 @@ namespace Lunity_Injector
                     }
                 }).Start();
             }
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("Sorion Injector (Fork of Lunity)");
-            Console.WriteLine("Verifying Sorion. Please wait...");
+            Console.WriteLine("Sorion Silver Injector (Fork of Lunity)");
+            Console.WriteLine("Verifying Sorion Silver. Please wait...");
             if (!verifyLunity())
             {
                 Console.WriteLine("An error occoured during the verification process.");
-                Console.WriteLine("Visit the Sorion Website for assisstance: https://cutt.ly/sorion-gold");
+                Console.WriteLine("Please join our discord for assisstance: https://discord.gg/CDfpsQp");
                 Console.WriteLine("When asking for help, please supply the ENTIRE error above.");
                 Console.ReadLine();
                 return;
             }
-            Console.WriteLine("Sorion is properly downloaded!");
+            Console.WriteLine("Sorion Silver is properly downloaded!");
             Console.WriteLine("Waiting for Minecraft...");
             awaitGame();
             Console.WriteLine("Minecraft found, injecting!");
             if (started)
             {
-                Thread.Sleep(6000);
+                Thread.Sleep(8000);
             }
             injectLunity();
-            Console.WriteLine("Sorion Successfully Injected!");
+            Console.WriteLine("Sorion Silver Successfully Injected!");
             if (!debug)
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
             else
                 Console.ReadLine();
         }

@@ -25,17 +25,18 @@ void TabGUI::onPostRender()
 				}
 			}
 			// x and y are position, z is width and w is height
-			DrawUtils::fillRectangle(Vector4(8, 8, 130, 32 + (cheatsInThisCat.size() * 10)), Color(0, 0, 0, 1), .5);
-			DrawUtils::drawRectangle(Vector4(8, 8, 130, 32 + (cheatsInThisCat.size() * 10)), Color(1, 0.87, 0, 1), .5, 2);
-			Color* test = new Color(1, 0.87, 0, 1);
-			std::string sorStr = std::string("Sorion Gold");
-			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
-			Color* white = new Color(1, 1, 1, 1);
+			DrawUtils::fillRectangle(Vector4(8, 8, 150, 32 + (cheatsInThisCat.size() * 10)), Color(0, 0, 0, 1), .5);
+			DrawUtils::drawRectangle(Vector4(8, 8, 150, 32 + (cheatsInThisCat.size() * 10)), Color(0.31, 0.34, 0.35, 1), .5, 2);
+			Color* test = new Color(0.31, 0.34, 0.35, 1);
+			Color* ts = new Color(0.75, 0.75, 0.75, 1);
+			std::string sorStr = std::string("Sorion Silver");
+			DrawUtils::drawText(Vector2(12, 11), &sorStr, ts, 2.0f);
+			Color* white = new Color(0.31, 0.34, 0.35, 1);
 			for (uint i = 0; i < cheatsInThisCat.size(); i++) {
 				bool selected = highlightedCht == i;
 				Color* color = nullptr;
 				if (cheatsInThisCat[i]->enabled) {
-					color = new Color(1, 0.87, 0, 1);
+					color = new Color(0.31, 0.34, 0.35, 1);
 				}
 				if (selected) {
 					DrawUtils::drawText(Vector2(12, 30 + (i * 10)), &string(">" + cheatsInThisCat[i]->name), color, 1.0f);
@@ -46,12 +47,13 @@ void TabGUI::onPostRender()
 			}
 		}
 		else {
-			DrawUtils::fillRectangle(Vector4(8, 8, 130, 32 + (categories.size() * 10)), Color(0, 0, 0, 1), .5);
-			DrawUtils::drawRectangle(Vector4(8, 8, 130, 32 + (categories.size() * 10)), Color(1, 0.87, 0, 1), .5, 2);
-			Color* test = new Color(1, 0.87, 0, 1);
-			Color* white = new Color(1, 1, 1, 1);
-			std::string sorStr = std::string("Sorion Gold");
-			DrawUtils::drawText(Vector2(12, 11), &sorStr, test, 2.0f);
+			DrawUtils::fillRectangle(Vector4(8, 8, 150, 32 + (categories.size() * 10)), Color(0, 0, 0, 1), .5);
+			DrawUtils::drawRectangle(Vector4(8, 8, 150, 32 + (categories.size() * 10)), Color(0.31, 0.34, 0.35, 1), .5, 2);
+			Color* test = new Color(0.31, 0.34, 0.35, 1);
+			Color* white = new Color(0.31, 0.34, 0.35, 1);
+			Color* ts = new Color(0.75, 0.75, 0.75, 1);
+			std::string sorStr = std::string("Sorion Silver");
+			DrawUtils::drawText(Vector2(12, 11), &sorStr, ts, 2.0f);
 			for (uint i = 0; i < categories.size(); i++) {
 				bool selected = highlightedCat == i;
 				if (selected) {
