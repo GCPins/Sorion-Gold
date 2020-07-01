@@ -6,6 +6,8 @@
 #include "../../SDK/LunMath.h"
 #include <iomanip>
 
+Color* gld = new Color(1, 0.87, 0, 1);
+
 struct Frame {
 	string title;
 	Rect titleRect;
@@ -193,7 +195,7 @@ void drawKeybindSetting(Cheat* cheat, Rect cheatRect, int* cheatExpOff, int* set
 		settingsRectColor.z += .2;
 	}
 	DrawUtils::fillRectangle(settingRect, settingsRectColor, 1);
-	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &tKeybind, nullptr, 1);
+	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &tKeybind, gld, 1);
 
 	string keyTxt;
 	if (cheat->reassigningKey)
@@ -201,7 +203,7 @@ void drawKeybindSetting(Cheat* cheat, Rect cheatRect, int* cheatExpOff, int* set
 	else
 		keyTxt = string((char*)&cheat->keyBind);
 	float valWid = DrawUtils::getTextWidth(keyTxt, 1);
-	DrawUtils::drawText(Vector2(settingRect.x + 90 - valWid, settingRect.y), &keyTxt, nullptr, 1);
+	DrawUtils::drawText(Vector2(settingRect.x + 90 - valWid, settingRect.y), &keyTxt, gld, 1);
 
 	*settingOff += 10;
 	*cheatExpOff += 10;
@@ -221,7 +223,7 @@ void drawToggleSetting(ToggleSetting* currentSetting, Rect cheatRect, int* cheat
 	}
 	string text = currentSetting->text;
 	DrawUtils::fillRectangle(settingRect, settingsRectColor, 1);
-	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &text, nullptr, 1);
+	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &text, gld, 1);
 	*settingOff += 10;
 	*cheatExpOff += 10;
 }
@@ -239,8 +241,8 @@ void drawSliderSetting(SliderSetting* currentSetting, Rect cheatRect, int* cheat
 	float valWid = DrawUtils::getTextWidth(valueText, 1);
 	Color settingsRectColor = Color(.20, .20, .20, 1);
 	DrawUtils::fillRectangle(settingRect, settingsRectColor, 1);
-	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &text, nullptr, 1);
-	DrawUtils::drawText(Vector2(settingRect.x + 90 - valWid, settingRect.y), &valueText, nullptr, 1);
+	DrawUtils::drawText(Vector2(settingRect.x, settingRect.y), &text, gld, 1);
+	DrawUtils::drawText(Vector2(settingRect.x + 90 - valWid, settingRect.y), &valueText, gld, 1);
 
 	float pixelVal = getPixelValue(currentSetting->getMin(), currentSetting->getMax());
 	//Logger::log("PixelVal: " + to_string(pixelVal));
@@ -297,13 +299,13 @@ void ClickGui::onPostRender()
 			Frame* window = windows[i];
 			Rect titleRect = window->titleRect;
 			DrawUtils::fillRectangle(titleRect, Color(.35,.35,.35,1), 1);
-			DrawUtils::drawText(Vector2(titleRect.x, titleRect.y), &window->title, nullptr, 1);
+			DrawUtils::drawText(Vector2(titleRect.x, titleRect.y), &window->title, gld, 1);
 			string expIco = "+";
 			if (window->expanded) {
 				expIco = "-";
 			}
 			float expWid = DrawUtils::getTextWidth(expIco, 1);
-			DrawUtils::drawText(Vector2(titleRect.x + titleRect.width - expWid, titleRect.y), &expIco, nullptr, 1);
+			DrawUtils::drawText(Vector2(titleRect.x + titleRect.width - expWid, titleRect.y), &expIco, gld, 1);
 			int cheatExpOff = 0;
 			string settingsIco = string("...");
 			if (window->expanded) {
@@ -324,7 +326,7 @@ void ClickGui::onPostRender()
 						rectColor.z = 1;
 					}
 					DrawUtils::fillRectangle(cheatRect, rectColor, 1);
-					DrawUtils::drawText(Vector2(cheatRect.x, cheatRect.y), &leCheat->name, nullptr, 1);
+					DrawUtils::drawText(Vector2(cheatRect.x, cheatRect.y), &leCheat->name, gld, 1);
 					Rect expRect = Rect(titleRect.x+75, titleRect.y + titleRect.height + (i == 0) + i * 10 + cheatExpOff, 15, 10);
 					Color expColor = Color(.15, .15, .15, 1);
 					if (expRect.contains(mx, my)) {
@@ -337,7 +339,7 @@ void ClickGui::onPostRender()
 					}
 					DrawUtils::fillRectangle(expRect, expColor, 1);
 					float settingsIcoWid = DrawUtils::getTextWidth(settingsIco, 1);
-					DrawUtils::drawText(Vector2(expRect.x + settingsIcoWid-1, expRect.y-2), &settingsIco, nullptr, 1);
+					DrawUtils::drawText(Vector2(expRect.x + settingsIcoWid-1, expRect.y-2), &settingsIco, gld, 1);
 					if (leCheat->expandedInClickUi) {
 						int settingOff = 0;
 						drawKeybindSetting(leCheat, cheatRect, &cheatExpOff, &settingOff, mx, my);

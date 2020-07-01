@@ -12,3 +12,4 @@ public:
 	void onPostRender();
 };
 
+void drawKeybindSetting(Cheat* cheat, Rect cheatRect, int* cheatExpOff, int* settingOff, int mx, int my);
